@@ -1,4 +1,6 @@
-# Jewelry Brand CRM
+# Secure-Scope
+
+## Jewelry Brand CRM
 
 Custom CRM for a gold and jewelry brand that keeps Zoho Books as the accounting, tax, payment, estimate, and invoice system while the CRM owns customers, leads, catalog enrichment, reservations, quotations, after-sales, reports, and sync logs.
 

@@ -1,84 +1,95 @@
-# Secure-Scope
+# SecureScope
 
-## Jewelry Brand CRM
+SecureScope is a lightweight passive website vulnerability scanner that helps you review a public website's security posture without running exploit attempts. It checks common website hardening issues, calculates a security score, groups findings by severity and owner category, and generates clear remediation guidance that can be shared with clients or internal teams.
 
-Custom CRM for a gold and jewelry brand that keeps Zoho Books as the accounting, tax, payment, estimate, and invoice system while the CRM owns customers, leads, catalog enrichment, reservations, quotations, after-sales, reports, and sync logs.
+## What SecureScope Checks
 
-## What is included
+- HTTPS and redirect behavior
+- TLS certificate details and expiry window
+- Security headers such as HSTS, CSP, X-Content-Type-Options, X-Frame-Options, Referrer-Policy, and Permissions-Policy
+- Cookie flags including Secure, HttpOnly, and SameSite
+- Mixed content and insecure form signals
+- Public metadata files such as robots.txt, sitemap.xml, and security.txt
+- Technology disclosure headers
+- Optional same-domain page crawling
+- Redirect chain and response timing
 
-- `backend/`: Django + Django REST Framework API with domain apps for accounts, customers, leads, tasks, products, reservations, quotations, after-sales, Zoho integration, reports, audit logs, and imports.
-- `frontend/`: Next.js + Tailwind CRM interface with dashboard, customers, leads, products, CSV import, reservations, quotations, after-sales, reports, and settings screens.
-- `docker-compose.yml`: local PostgreSQL, Redis, backend, Celery worker, and frontend services.
-- Zoho Books stays the final system for invoices, estimates, taxes, and payments. WhatsApp and SMS integrations are intentionally excluded.
+## Key Features
 
-## Backend modules
+- Passive scanning only: no exploitation, brute force, authentication bypass, or intrusive testing
+- Modern light-theme SaaS dashboard UI
+- Large security score summary with risk explanation
+- Severity metrics for critical, high, medium, low, and info findings
+- Owner categories for server, frontend, backend, metadata, and DNS/email-related work
+- Top recommendations ranked by impact
+- Accordion findings with evidence, risk explanation, fix steps, and code examples
+- Severity and category filters
+- Downloadable HTML report with detailed remediation guidance
+- JSON export for developers or automation workflows
+- Separate SEO-friendly landing page at `/landing.html`
 
-- `accounts`: custom user model and CRM roles.
-- `customers`: customer preferences and Zoho contact reference.
-- `leads`: pipeline stages, product shortlist, activities, won/lost flow.
-- `tasks_app`: follow-up tasks and completion notes.
-- `products`: jewelry catalog, product images, certificates, CSV import normalization.
-- `reservations`: product locking rules, expiry release behavior, conversion status.
-- `quotations`: quotation header/items, Zoho estimate/invoice references.
-- `after_sales`: repair/resize/polish/return workflows with before/after images.
-- `zoho_integration`: sync logs, webhook logs, Celery tasks, Zoho client wrapper.
-- `reports`: dashboard and inventory summary endpoints.
-- `audit_logs`: important action log table.
-- `imports`: import summaries and row-level import errors.
+## Pages
 
-## Local setup
+- `/` - scanner app and report dashboard
+- `/landing.html` - marketing landing page for the scanner
+- `/api/scan` - backend scan API route
 
-```bash
-docker compose up --build
-```
+## Local Setup
 
-Then open:
-
-- Frontend: `http://localhost:3000`
-- API: `http://localhost:8000/api`
-- Swagger: `http://localhost:8000/api/docs/`
-
-Create an admin user:
+Install Node.js 18 or newer, then run:
 
 ```bash
-docker compose exec backend python manage.py createsuperuser
+npm start
 ```
 
-## Environment
+Open:
 
-Copy `backend/.env.example` and `frontend/.env.example` for non-Docker local development. Production secrets should be stored in Google Secret Manager and injected into Cloud Run.
+```text
+http://localhost:3000
+```
 
-Required production variables:
+Landing page:
 
-- `DJANGO_SECRET_KEY`
-- `DATABASE_URL`
-- `REDIS_URL`
-- `GCP_STORAGE_BUCKET`
-- `ZOHO_CLIENT_ID`
-- `ZOHO_CLIENT_SECRET`
-- `ZOHO_REFRESH_TOKEN`
-- `ZOHO_ORGANIZATION_ID`
-- `ZOHO_API_DOMAIN`
-- `FRONTEND_URL`
-- `BACKEND_URL`
+```text
+http://localhost:3000/landing.html
+```
 
-## MVP business rules implemented
+## Useful Commands
 
-- Product inventory status is owned by the CRM and does not rely only on Zoho active/inactive status.
-- CSV import normalizes Zoho item export fields including `CF.Inventory`, `CF.Certification present?`, and `CF.Product Type`.
-- Reservations can only be created for `Available` products.
-- Creating an active reservation locks the product as `Reserved`.
-- Cancelling or expiring a reservation releases the product back to `Available`.
-- Quotation conversion can store Zoho estimate/invoice IDs and mark products sold after invoice conversion.
-- Zoho API requests, webhook payloads, failed syncs, and retry attempts have database log models.
+```bash
+npm start
+npm run check
+```
 
-## GCP deployment target
+## Project Structure
 
-- Frontend: Cloud Run service from `frontend/Dockerfile`
-- Backend API: Cloud Run service from `backend/Dockerfile`
-- Worker: Cloud Run worker/job using the backend image and Celery command
-- Database: Cloud SQL PostgreSQL
-- Queue: Memorystore Redis
-- Files: Cloud Storage
-- Secrets: Secret Manager
-- Scheduler: Cloud Scheduler hitting backend endpoints or Cloud Run jobs for daily Zoho sync, hourly reservation expiry, daily follow-up status checks, and sync error summaries
+```text
+public/
+  app.js          Scanner frontend logic and report rendering
+  index.html     Scanner dashboard page
+  landing.html   SEO landing page
+  landing.css    Landing page styles
+  styles.css     Scanner dashboard styles
+server.js        Node.js HTTP server and passive scanner API
+package.json     App metadata and scripts
+```
+
+## Safety Notes
+
+Only scan websites you own or have explicit permission to test. SecureScope blocks private and local network targets and is designed for passive checks, but responsible authorization is still required.
+
+## SEO Focus
+
+SecureScope is optimized around these search intents:
+
+- website vulnerability scanner
+- passive website security scanner
+- security headers checker
+- HTTPS and TLS scanner
+- cookie security audit
+- website security report tool
+- website security posture review
+
+## License
+
+Add your preferred license before publishing for public reuse.

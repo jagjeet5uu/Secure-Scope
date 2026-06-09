@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Passive Website Security Scanner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Passive Website Security Scanner home">
+          <span class="brand-mark" aria-hidden="true">
+            <i class="fa-solid fa-shield-halved"></i>
+          </span>
+          <span>
+            <strong>SecureScope</strong>
+            <small>Passive Website Security Scanner</small>
+          </span>
+        </a>
+        <div class="topbar-status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Passive checks only</span>
+        </div>
+      </header>
+
+      <section class="scan-panel" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow">Lightweight security posture review</p>
+          <h1 id="page-title">Scan a website for common security gaps.</h1>
+          <p class="summary">Check HTTPS, TLS expiry, security headers, cookie flags, redirects, metadata files, crawled pages, and fix guidance without running exploit attempts.</p>
+          <div class="trust-row" aria-label="Scanner capabilities">
+            <span>Header audit</span>
+            <span>TLS review</span>
+            <span>Cookie flags</span>
+            <span>Guided fixes</span>
+          </div>
+        </div>
+
+        <form id="scan-form" class="scan-form">
+          <label for="target-url">Website URL</label>
+          <div class="input-row">
+              <span class="input-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></span>
+            <input id="target-url" name="url" type="text" placeholder="example.com" autocomplete="url" required>
+            <button type="submit">
+              <span>Scan</span>
+            </button>
+          </div>
+          <div class="options-row">
+            <label class="checkbox-row">
+              <input id="crawl-pages" type="checkbox">
+              <span>Crawl same-domain pages</span>
+            </label>
+            <label class="select-row">
+              <span>Pages</span>
+              <select id="max-pages">
+                <option value="3">3</option>
+                <option value="4" selected>4</option>
+                <option value="6">6</option>
+              </select>
+            </label>
+          </div>
+          <p class="hint">Only scan websites you own or have permission to test. Private and local network targets are blocked.</p>
+        </form>
+      </section>
+
+      <section id="status" class="status hidden" role="status"></section>
+
+      <section id="results" class="results hidden" aria-live="polite">
+        <div class="results-layout">
+          <aside class="summary-sidebar" aria-label="Scan actions">
+            <section class="sidebar-card">
+              <p class="eyebrow">Current score</p>
+              <strong id="sidebar-score">--</strong>
+              <span id="sidebar-risk" class="risk-label">Not scanned</span>
+              <div class="sidebar-stat"><span>Total findings</span><strong id="sidebar-total">0</strong></div>
+              <div class="sidebar-stat"><span>Duration</span><strong id="sidebar-duration">--</strong></div>
+              <div class="toolbar">
+                <button id="retest-button" type="button"><i class="fa-solid fa-rotate-right"></i> Retest</button>
+                <button id="export-json-button" type="button"><i class="fa-solid fa-file-code"></i> Export JSON</button>
+                <button id="print-report-button" type="button"><i class="fa-solid fa-download"></i> Download Report</button>
+              </div>
+            </section>
+          </aside>
+
+          <div class="results-main">
+            <section class="score-card" aria-label="Scan summary">
+              <div class="score-orb">
+                <p class="eyebrow">Security score</p>
+                <strong id="score">--</strong>
+              </div>
+              <div class="score-details">
+                <p class="eyebrow">Scan Summary</p>
+                <h2 id="risk-heading">Risk posture pending</h2>
+                <p id="risk-summary" class="risk-summary">Run a scan to see prioritized security posture guidance.</p>
+                <div id="severity-summary" class="severity-summary"></div>
+                <div id="category-summary" class="category-summary" aria-label="Findings by owner category"></div>
+              </div>
+              <div class="scan-meta">
+                <span id="status-code"></span>
+                <span id="duration"></span>
+              </div>
+            </section>
+
+            <article class="panel recommendations-panel">
+              <div class="panel-heading">
+                <span class="panel-icon recommendation-icon" aria-hidden="true"><i class="fa-solid fa-list-check"></i></span>
+                <div>
+                  <p class="eyebrow">Priority action plan</p>
+                  <h2>Top Recommendations</h2>
+                  <p>Fix these first to improve the score fastest. Items are ranked by severity and impact.</p>
+                </div>
+              </div>
+              <div id="top-recommendations" class="recommendation-list"></div>
+            </article>
+
+            <article class="panel value-panel">
+              <div class="panel-heading">
+                <span class="panel-icon value-icon" aria-hidden="true"><i class="fa-solid fa-handshake-angle"></i></span>
+                <div>
+                  <p class="eyebrow">Customer value</p>
+                  <h2>How Zion Cloud Solutions can help</h2>
+                  <p>Turn the scan results into a practical remediation plan, implementation support, and a verified improvement report.</p>
+                </div>
+              </div>
+              <div id="zcs-value-summary" class="value-summary"></div>
+              <div class="value-grid">
+                <div class="value-card">
+                  <i class="fa-solid fa-route"></i>
+                  <strong>Prioritized fix roadmap</strong>
+                  <p>We group issues by owner, severity, and business impact so your team knows what to fix first.</p>
+                </div>
+                <div class="value-card">
+                  <i class="fa-solid fa-screwdriver-wrench"></i>
+                  <strong>Hands-on implementation</strong>
+                  <p>We help configure headers, cookies, TLS, CDN rules, app middleware, and platform settings correctly.</p>
+                </div>
+                <div class="value-card">
+                  <i class="fa-solid fa-circle-check"></i>
+                  <strong>Retest and validation</strong>
+                  <p>After fixes are applied, we rescan and provide evidence that the security posture improved.</p>
+                </div>
+              </div>
+              <a class="value-cta" href="https://zionclouds.com/" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Visit zionclouds.com
+              </a>
+            </article>
+
+            <article class="panel findings-panel">
+              <div class="panel-heading findings-heading">
+                <div>
+                  <span class="panel-icon" aria-hidden="true">03</span>
+                  <h2>Findings & Guided Fixes</h2>
+                </div>
+                <div class="finding-controls">
+                  <div id="severity-filters" class="severity-filters" aria-label="Filter findings by severity"></div>
+                  <div id="category-filters" class="category-filters" aria-label="Filter findings by owner category"></div>
+                  <label class="sort-control">
+                    <span>Sort</span>
+                    <select id="finding-sort">
+                      <option value="severity">Severity first</option>
+                      <option value="category">Category</option>
+                      <option value="page">Affected page</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div id="findings" class="findings"></div>
+            </article>
+
+            <details class="panel technical-panel" open>
+              <summary>
+                <span class="panel-icon" aria-hidden="true">T</span>
+                <span>Target & Header Details</span>
+              </summary>
+              <div class="dashboard-grid details-grid">
+                <article class="inner-card panel-target">
+                  <h2>Target</h2>
+                  <dl class="facts">
+                    <div><dt>Requested</dt><dd id="requested-url"></dd></div>
+                    <div><dt>Final URL</dt><dd id="final-url"></dd></div>
+                    <div><dt>DNS</dt><dd id="dns"></dd></div>
+                    <div><dt>TLS</dt><dd id="tls"></dd></div>
+                    <div><dt>Detected tech</dt><dd id="technologies"></dd></div>
+                  </dl>
+                </article>
+
+                <article class="inner-card">
+                  <h2>Security Header Checks</h2>
+                  <ul id="checks" class="check-list"></ul>
+                </article>
+              </div>
+            </details>
+
+            <details class="panel technical-panel">
+              <summary>
+                <span class="panel-icon" aria-hidden="true">R</span>
+                <span>Raw Technical Evidence</span>
+              </summary>
+              <div class="dashboard-grid details-grid">
+                <article class="inner-card">
+                  <h2>Crawled Pages</h2>
+                  <div id="pages" class="plain-list"></div>
+                </article>
+
+                <article class="inner-card">
+                  <h2>Public Metadata Files</h2>
+                  <div id="metadata" class="plain-list"></div>
+                </article>
+
+                <article class="inner-card">
+                  <h2>Cookies</h2>
+                  <div id="cookies" class="plain-list"></div>
+                </article>
+
+                <article class="inner-card">
+                  <h2>Redirect Chain</h2>
+                  <div id="redirects" class="plain-list"></div>
+                </article>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel history-panel">
+        <div class="panel-heading">
+          <span class="panel-icon" aria-hidden="true">H</span>
+          <h2>Scan History</h2>
+        </div>
+        <div id="history" class="plain-list"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SecureScope by Zion Cloud Solutions</title>
+    <meta name="description" content="A passive website security scanner that turns public website checks into client-ready remediation reports.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/landing.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/landing.html" aria-label="SecureScope landing page">
+        <span class="brand-icon"><i class="fa-solid fa-shield-halved"></i></span>
+        <span>
+          <strong>SecureScope</strong>
+          <small>by Zion Cloud Solutions</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Landing navigation">
+        <a href="#platform">Platform</a>
+        <a href="#value">Client value</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#pricing">Packages</a>
+      </nav>
+      <a class="header-button" href="/">Open scanner</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Passive website security scanner</p>
+          <h1>Turn website security gaps into a client-ready action plan.</h1>
+          <p class="hero-summary">SecureScope helps agencies, consultants, and IT teams show customers what is wrong, why it matters, who should fix it, and how Zion Cloud Solutions can help close the gap.</p>
+          <div class="hero-stats" aria-label="Landing page value highlights">
+            <div><strong>5</strong><span>owner groups</span></div>
+            <div><strong>0</strong><span>exploit attempts</span></div>
+            <div><strong>1</strong><span>shareable report</span></div>
+          </div>
+          <div class="hero-actions">
+            <a class="primary-button" href="/"><i class="fa-solid fa-bolt"></i> Start a scan</a>
+            <a class="secondary-button" href="https://zionclouds.com/" target="_blank" rel="noopener">Talk to Zion Cloud Solutions</a>
+          </div>
+          <div class="proof-row" aria-label="Key scanner qualities">
+            <span><i class="fa-solid fa-circle-check"></i> Passive checks only</span>
+            <span><i class="fa-solid fa-circle-check"></i> Client-ready reports</span>
+            <span><i class="fa-solid fa-circle-check"></i> Guided remediation</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Security dashboard preview">
+          <div class="browser-frame">
+            <div class="floating-chip chip-score"><i class="fa-solid fa-arrow-trend-up"></i> Score improved after fixes</div>
+            <div class="floating-chip chip-report"><i class="fa-solid fa-file-shield"></i> Report ready</div>
+            <div class="browser-bar">
+              <span></span><span></span><span></span>
+              <p>securescope.local/report</p>
+            </div>
+            <div class="preview-dashboard">
+              <div class="score-ring">
+                <span>Score</span>
+                <strong>82/100</strong>
+                <em>Moderate risk</em>
+              </div>
+              <div class="preview-content">
+                <div class="preview-title">
+                  <span class="risk-pill">Moderate risk</span>
+                  <strong>Top fixes for clientsite.com</strong>
+                </div>
+                <div class="preview-metrics">
+                  <span>0 critical</span>
+                  <span>2 high</span>
+                  <span>4 low</span>
+                </div>
+                <div class="finding-preview high">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  <div>
+                    <strong>Missing Strict-Transport-Security</strong>
+                    <p>Server / Hosting owner. Add HSTS after confirming HTTPS works across subdomains.</p>
+                  </div>
+                </div>
+                <div class="finding-preview low">
+                  <i class="fa-solid fa-circle-info"></i>
+                  <div>
+                    <strong>Missing Permissions-Policy</strong>
+                    <p>Restrict browser features that the site does not need.</p>
+                  </div>
+                </div>
+                <div class="code-preview">
+                  <span>Nginx example</span>
+                  <code>add_header X-Content-Type-Options "nosniff" always;</code>
+                </div>
+                <div class="preview-footer">
+                  <span><i class="fa-solid fa-check"></i> Evidence captured</span>
+                  <span><i class="fa-solid fa-check"></i> Fix steps generated</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="logo-strip" aria-label="Scanner focus areas">
+        <strong>Passive coverage</strong>
+        <span>HTTPS</span>
+        <span>TLS</span>
+        <span>Security headers</span>
+        <span>Cookie flags</span>
+        <span>Metadata files</span>
+        <span>Redirects</span>
+      </section>
+
+      <section class="section narrative compact-section">
+        <div class="section-heading">
+          <p class="eyebrow">A new reality for website owners</p>
+          <h2>Customers ship faster, but small public-facing gaps still create real trust risk.</h2>
+          <p>Modern websites are assembled from hosting panels, CDNs, JavaScript frameworks, CMS plugins, APIs, third-party pixels, and payment or login flows. A site can look polished while still missing basic browser and transport protections.</p>
+        </div>
+        <div class="narrative-grid">
+          <article>
+            <i class="fa-solid fa-clipboard-list"></i>
+            <span>Before</span>
+            <h3>Security was treated as a final checklist</h3>
+            <p>Teams waited until launch, then manually reviewed headers, cookies, redirects, and public metadata when there was already pressure to go live.</p>
+          </article>
+          <article>
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <span>Now</span>
+            <h3>Every website changes continuously</h3>
+            <p>Marketing pages, CMS updates, frontend deployments, CDN changes, and backend releases can silently change the external security posture.</p>
+          </article>
+          <article>
+            <i class="fa-solid fa-route"></i>
+            <span>Needed</span>
+            <h3>A repeatable path from exposure to fix</h3>
+            <p>SecureScope gives teams a simple way to find visible gaps, explain them clearly, and turn them into prioritized remediation work.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="platform" class="section wide-section">
+        <div class="section-heading">
+          <p class="eyebrow">What the platform checks</p>
+          <h2>A clear passive scan for different types of websites.</h2>
+          <p>Use it for business sites, SaaS apps, ecommerce stores, custom apps, landing pages, CMS websites, and client portals. It is not limited to WordPress.</p>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <i class="fa-solid fa-lock"></i>
+            <h3>Transport security</h3>
+            <p>HTTPS status, redirects, TLS certificate details, expiry risk, and HSTS guidance.</p>
+          </article>
+          <article>
+            <i class="fa-solid fa-window-restore"></i>
+            <h3>Browser protection headers</h3>
+            <p>CSP, X-Frame-Options, Referrer-Policy, Permissions-Policy, and content sniffing protections.</p>
+          </article>
+          <article>
+            <i class="fa-solid fa-cookie-bite"></i>
+            <h3>Cookie hardening</h3>
+            <p>Secure, HttpOnly, and SameSite flags with practical backend and platform fix examples.</p>
+          </article>
+          <article>
+            <i class="fa-solid fa-file-lines"></i>
+            <h3>Public metadata</h3>
+            <p>robots.txt, sitemap.xml, security.txt, visible exposure, and client-friendly recommendations.</p>
+          </article>
+          <article>
+            <i class="fa-solid fa-code"></i>
+            <h3>Frontend signals</h3>
+            <p>Mixed content, password form risk, viewport basics, and browser-facing misconfiguration.</p>
+          </article>
+          <article>
+            <i class="fa-solid fa-download"></i>
+            <h3>Detailed report</h3>
+            <p>Export a standalone report with evidence, risk context, fix steps, and verification checklist.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section operating-model feature-band">
+        <div class="section-heading">
+          <p class="eyebrow">Operating model</p>
+          <h2>External posture, business context, and remediation guidance in one page.</h2>
+          <p>Inspired by cloud-security platforms that connect signals into action, this landing page positions SecureScope as a practical front door for website hardening services.</p>
+        </div>
+        <div class="model-map" aria-label="SecureScope operating model">
+          <article>
+            <i class="fa-solid fa-globe"></i>
+            <h3>Discover</h3>
+            <p>Scan the public website, redirects, response headers, TLS details, cookies, metadata files, and optional same-domain pages.</p>
+          </article>
+          <span class="connector"><i class="fa-solid fa-arrow-right"></i></span>
+          <article>
+            <i class="fa-solid fa-diagram-project"></i>
+            <h3>Contextualize</h3>
+            <p>Group issues by severity and owner: server, frontend, backend, metadata, and DNS or email posture.</p>
+          </article>
+          <span class="connector"><i class="fa-solid fa-arrow-right"></i></span>
+          <article>
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <h3>Remediate</h3>
+            <p>Provide fix steps, platform examples, validation checks, and ZCS service mapping for each issue.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="value" class="section split premium-split">
+        <div class="section-copy">
+          <p class="eyebrow">More value for the customer</p>
+          <h2>Show the problem, the business risk, and the path to fix it.</h2>
+          <p>Clients do not buy a list of headers. They buy clarity, confidence, and implementation support. SecureScope structures findings so every issue becomes a practical service opportunity.</p>
+          <div class="value-list">
+            <div><i class="fa-solid fa-user-gear"></i><span>Assign issues to server, frontend, backend, metadata, and DNS owners.</span></div>
+            <div><i class="fa-solid fa-arrow-trend-up"></i><span>Explain how each fix improves the score and reduces visible risk.</span></div>
+            <div><i class="fa-solid fa-clipboard-check"></i><span>Give customers evidence they can review before and after remediation.</span></div>
+          </div>
+        </div>
+        <div class="impact-card">
+          <p class="eyebrow">Client conversation</p>
+          <h3>Instead of saying:</h3>
+          <p class="quote">"Your site is missing some headers."</p>
+          <h3>Say this:</h3>
+          <p class="quote strong">"Your site has 2 high-priority server hardening gaps. Zion Cloud Solutions can fix them, retest the site, and provide proof in the final report."</p>
+        </div>
+      </section>
+
+      <section class="section exposure-section wide-section">
+        <div class="section-heading">
+          <p class="eyebrow">From exposure to fix</p>
+          <h2>A customer-friendly remediation story for every scan.</h2>
+          <p>The scanner is designed to create a useful business conversation, not just a technical dump. Every result should help the client decide what to fix first and who can fix it.</p>
+        </div>
+        <div class="exposure-grid">
+          <article class="exposure-card">
+            <span class="step-label">Exposure</span>
+            <h3>What is publicly visible?</h3>
+            <ul>
+              <li>Missing security response headers</li>
+              <li>Weak redirect or HTTPS posture</li>
+              <li>Cookies without protective flags</li>
+              <li>Public metadata and technology clues</li>
+            </ul>
+          </article>
+          <article class="exposure-card">
+            <span class="step-label">Impact</span>
+            <h3>Why should the client care?</h3>
+            <ul>
+              <li>Reduced browser-side protection</li>
+              <li>Higher session and clickjacking risk</li>
+              <li>More clues for attackers and scanners</li>
+              <li>Lower trust during vendor reviews</li>
+            </ul>
+          </article>
+          <article class="exposure-card">
+            <span class="step-label">Fix</span>
+            <h3>How does ZCS resolve it?</h3>
+            <ul>
+              <li>Apply server, CDN, and app configuration</li>
+              <li>Test changes safely before enforcement</li>
+              <li>Retest and document resolved evidence</li>
+              <li>Create an ongoing hardening baseline</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="workflow" class="section compact-section">
+        <div class="section-heading">
+          <p class="eyebrow">Service workflow</p>
+          <h2>Use the scanner as a lead magnet and remediation engine.</h2>
+        </div>
+        <div class="timeline">
+          <article>
+            <span>01</span>
+            <h3>Run scan</h3>
+            <p>Enter the customer website and run passive checks. Optional crawling covers a few same-domain pages.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Review priorities</h3>
+            <p>Use the score, severity cards, top recommendations, and owner categories to explain what matters first.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Propose fixes</h3>
+            <p>Map findings to Zion Cloud Solutions services such as hosting hardening, CDN rules, app middleware, and DNS guidance.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Retest and prove</h3>
+            <p>After changes are applied, rerun the scanner and share the improved score and resolved evidence.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section owner-matrix wide-section">
+        <div class="section-heading">
+          <p class="eyebrow">Ownership clarity</p>
+          <h2>Make every issue easier to assign.</h2>
+          <p>A good report should reduce confusion. SecureScope groups the common passive findings into owners so the client can move from conversation to action.</p>
+        </div>
+        <div class="matrix-table" role="table" aria-label="Issue ownership matrix">
+          <div role="row" class="matrix-head">
+            <span role="columnheader">Owner</span>
+            <span role="columnheader">Example issues</span>
+            <span role="columnheader">ZCS help</span>
+          </div>
+          <div role="row">
+            <span role="cell">Server / Hosting</span>
+            <span role="cell">HSTS, referrer policy, frame protection, server header exposure</span>
+            <span role="cell">Hosting, web server, reverse proxy, and CDN configuration</span>
+          </div>
+          <div role="row">
+            <span role="cell">Frontend</span>
+            <span role="cell">CSP rollout, mixed content, insecure forms, browser-facing defaults</span>
+            <span role="cell">Safe CSP planning, frontend cleanup, and deployment validation</span>
+          </div>
+          <div role="row">
+            <span role="cell">Backend / App</span>
+            <span role="cell">Cookie flags, CSRF signals, session hardening, middleware headers</span>
+            <span role="cell">Application middleware fixes and secure session configuration</span>
+          </div>
+          <div role="row">
+            <span role="cell">Metadata</span>
+            <span role="cell">robots.txt clues, missing security.txt, sitemap exposure</span>
+            <span role="cell">Public metadata cleanup and disclosure process guidance</span>
+          </div>
+          <div role="row">
+            <span role="cell">DNS / Email</span>
+            <span role="cell">Future DNS, MX, SPF, DKIM, DMARC, and domain posture checks</span>
+            <span role="cell">DNS review and email authentication improvement plan</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services compact-section">
+        <div class="section-heading">
+          <p class="eyebrow">How Zion Cloud Solutions can help</p>
+          <h2>Turn every finding into a clear service package.</h2>
+        </div>
+        <div class="service-cards">
+          <article>
+            <i class="fa-solid fa-server"></i>
+            <h3>Server and hosting hardening</h3>
+            <p>Configure HSTS, header rules, TLS settings, redirects, and platform-level security defaults.</p>
+          </article>
+          <article>
+            <i class="fa-solid fa-cloud"></i>
+            <h3>CDN and DNS support</h3>
+            <p>Improve edge rules, redirect behavior, DNS posture, email security records, and cache behavior.</p>
+          </article>
+          <article>
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>Application remediation</h3>
+            <p>Fix cookie flags, CSRF handling, frontend mixed content, CSP rollout, and framework-level headers.</p>
+          </article>
+          <article>
+            <i class="fa-solid fa-file-shield"></i>
+            <h3>Security reporting</h3>
+            <p>Deliver client-ready before-and-after reports with issue evidence, fixes applied, and verification notes.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section report-showcase feature-band">
+        <div class="section-heading">
+          <p class="eyebrow">Report experience</p>
+          <h2>A polished report clients can actually use.</h2>
+          <p>Instead of making customers interpret raw technical output, the report packages the scan into executive context, issue evidence, remediation examples, and retest proof.</p>
+        </div>
+        <div class="report-layout">
+          <div class="report-card-large">
+            <div class="report-top">
+              <span>Security Scan Report</span>
+              <strong>clientsite.com</strong>
+            </div>
+            <div class="report-score-row">
+              <div><strong>82</strong><span>Score</span></div>
+              <div><strong>2</strong><span>High</span></div>
+              <div><strong>4</strong><span>Fixes</span></div>
+            </div>
+            <div class="report-lines">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="report-points">
+            <article><i class="fa-solid fa-layer-group"></i><strong>Executive summary</strong><p>Clear score, risk label, target, duration, and top priorities.</p></article>
+            <article><i class="fa-solid fa-code"></i><strong>Platform examples</strong><p>Apache, Nginx, Express, Next.js, Cloudflare-style guidance where relevant.</p></article>
+            <article><i class="fa-solid fa-circle-check"></i><strong>Validation checklist</strong><p>Retest steps so customers can prove the hardening work improved posture.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section outcomes compact-section">
+        <div class="section-heading">
+          <p class="eyebrow">Business outcomes</p>
+          <h2>Position security hardening as measurable customer value.</h2>
+        </div>
+        <div class="outcome-grid">
+          <article>
+            <strong>Faster sales conversations</strong>
+            <p>Use the scanner as a discovery tool that quickly shows visible risk and opens a remediation discussion.</p>
+          </article>
+          <article>
+            <strong>Clearer technical handoff</strong>
+            <p>Send the right findings to the right owner with evidence, fix steps, and examples for common platforms.</p>
+          </article>
+          <article>
+            <strong>Better proof after work</strong>
+            <p>Retest the same site after remediation and share the improved score and resolved recommendations.</p>
+          </article>
+          <article>
+            <strong>Recurring service potential</strong>
+            <p>Offer monthly website posture checks to catch drift caused by CMS changes, CDN updates, or new releases.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="pricing" class="section packages wide-section">
+        <div class="section-heading">
+          <p class="eyebrow">Package ideas</p>
+          <h2>Simple offers customers can understand.</h2>
+        </div>
+        <div class="package-grid">
+          <article>
+            <span class="package-label">Starter</span>
+            <h3>Website Security Snapshot</h3>
+            <p>One passive scan, executive summary, top recommendations, and client review call.</p>
+            <a href="/" class="package-link">Run scanner</a>
+          </article>
+          <article class="featured">
+            <span class="package-label">Most useful</span>
+            <h3>Fix and Validate</h3>
+            <p>Scan, prioritized remediation plan, hands-on fixes, retest, and proof report.</p>
+            <a href="https://zionclouds.com/" target="_blank" rel="noopener" class="package-link">Contact ZCS</a>
+          </article>
+          <article>
+            <span class="package-label">Ongoing</span>
+            <h3>Monthly Posture Review</h3>
+            <p>Recurring scans, drift detection, score trend review, and monthly hardening recommendations.</p>
+            <a href="https://zionclouds.com/" target="_blank" rel="noopener" class="package-link">Plan service</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section comparison compact-section">
+        <div class="section-heading">
+          <p class="eyebrow">Why it feels different</p>
+          <h2>Not another raw scanner output.</h2>
+        </div>
+        <div class="comparison-grid">
+          <article>
+            <h3>Basic scanner</h3>
+            <ul>
+              <li>Lists technical checks</li>
+              <li>Leaves customers unsure what matters</li>
+              <li>Does not explain ownership</li>
+              <li>Hard to convert into service work</li>
+            </ul>
+          </article>
+          <article class="featured-comparison">
+            <h3>SecureScope + ZCS</h3>
+            <ul>
+              <li>Ranks issues by risk and impact</li>
+              <li>Explains what the client should fix first</li>
+              <li>Maps findings to owner categories</li>
+              <li>Connects every issue to practical ZCS remediation</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section use-cases wide-section">
+        <div class="section-heading">
+          <p class="eyebrow">Use cases</p>
+          <h2>Where this landing page can convert.</h2>
+        </div>
+        <div class="use-case-grid">
+          <article><i class="fa-solid fa-building"></i><h3>SMB website audit</h3><p>Offer a quick security posture scan before pitching hosting, maintenance, or cloud services.</p></article>
+          <article><i class="fa-solid fa-cart-shopping"></i><h3>Ecommerce readiness</h3><p>Check basic browser protections before campaigns, payment flow updates, and seasonal traffic spikes.</p></article>
+          <article><i class="fa-solid fa-rocket"></i><h3>Pre-launch review</h3><p>Run a lightweight check before a new landing page, app, or client portal goes live.</p></article>
+          <article><i class="fa-solid fa-repeat"></i><h3>Monthly drift check</h3><p>Catch posture changes after CMS plugin updates, CDN edits, framework releases, or hosting migrations.</p></article>
+        </div>
+      </section>
+
+      <section class="section evidence compact-section">
+        <div class="section-heading">
+          <p class="eyebrow">Research-backed focus</p>
+          <h2>Grounded in common web security guidance.</h2>
+          <p>The scanner focuses on passive signals that are visible from public web responses and align with commonly referenced web security guidance.</p>
+        </div>
+        <div class="evidence-grid">
+          <a href="https://owasp.org/www-project-secure-headers/" target="_blank" rel="noopener">
+            <span>OWASP Secure Headers</span>
+            <p>Security headers can help restrict preventable browser-side risks when implemented correctly.</p>
+          </a>
+          <a href="https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/" target="_blank" rel="noopener">
+            <span>OWASP WSTG</span>
+            <p>Configuration, deployment, and information-gathering checks are core parts of web security testing.</p>
+          </a>
+          <a href="https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Content-Security-Policy" target="_blank" rel="noopener">
+            <span>MDN CSP reference</span>
+            <p>CSP helps site owners control what resources browsers are allowed to load.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="section faq compact-section">
+        <div class="section-heading">
+          <p class="eyebrow">Questions clients ask</p>
+          <h2>Clear answers before the sales call.</h2>
+        </div>
+        <div class="faq-grid">
+          <details open>
+            <summary>Is this a penetration test?</summary>
+            <p>No. It is a passive public website posture scan. It does not exploit, brute force, authenticate, or run intrusive payloads.</p>
+          </details>
+          <details>
+            <summary>Can it scan non-WordPress websites?</summary>
+            <p>Yes. It checks public web responses, so it works for custom websites, SaaS apps, ecommerce sites, CMS builds, and landing pages.</p>
+          </details>
+          <details>
+            <summary>Why should we fix missing headers?</summary>
+            <p>Headers like HSTS, CSP, Referrer-Policy, and X-Content-Type-Options help browsers enforce safer behavior and reduce avoidable exposure.</p>
+          </details>
+          <details>
+            <summary>What happens after the scan?</summary>
+            <p>Zion Cloud Solutions can review the findings, apply fixes, validate the result, and provide a customer-ready proof report.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <p class="eyebrow">Ready to show value</p>
+        <h2>Scan a website, explain the risk, and offer a clear fix plan.</h2>
+        <div class="hero-actions">
+          <a class="primary-button" href="/"><i class="fa-solid fa-magnifying-glass"></i> Open scanner</a>
+          <a class="secondary-button" href="https://zionclouds.com/" target="_blank" rel="noopener">Visit zionclouds.com</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>SecureScope</strong>
+        <p>Passive website security scanner for customer-ready posture reports.</p>
+      </div>
+      <div>
+        <a href="/">Open scanner</a>
+        <a href="https://zionclouds.com/" target="_blank" rel="noopener">Zion Cloud Solutions</a>
+      </div>
+    </footer>
+  </body>
+</html>

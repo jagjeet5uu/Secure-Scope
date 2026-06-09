@@ -1,0 +1,15 @@
+{
+  "name": "jewelry-brand-crm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo for a custom jewelry brand CRM with Next.js frontend and Django REST backend.",
+  "scripts": {
+    "dev": "docker compose up --build",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "frontend:build": "npm --prefix frontend run build",
+    "backend:check": "cd backend && python manage.py check"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
